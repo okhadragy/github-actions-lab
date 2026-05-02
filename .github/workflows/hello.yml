@@ -1,5 +1,5 @@
-name: Hello Agile
-on: [ push ]
+name: Action Basics Demo
+on: [push]
 jobs:
   build:
   runs-on: ubuntu-latest
@@ -10,8 +10,8 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.10" # Input passed to the action
-
+        python-version: '3.10' # Input passed to the action
+    
     - name: Run Python Commands
       run: |
         echo "---"
@@ -19,9 +19,3 @@ jobs:
         python -c "print('Hello from Python in GitHub Actions!')"
         python -c "for i in range(3): print(f'Counting {i+1}')"
         echo "---"
-
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print Hello
-        run: echo "Hello from GitHub Actions!"
